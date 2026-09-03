@@ -1,0 +1,26 @@
+# Nextflow run artifacts
+work/
+results/
+.nextflow/
+.nextflow.log*
+timeline*.html
+report*.html
+trace*.txt
+dag*.html
+dag*.dot
+
+# Downloaded/generated data (should be re-created by running the pipeline)
+*.fna
+*.fna.gz
+*.fa
+*.fa.gz
+ncbi_dataset.zip
+ncbi_dataset/
+dataset/
+gc_content.txt
+length.txt
+
+# OS/editor cruft
+.DS_Store
+.vscode/
+*.swp
