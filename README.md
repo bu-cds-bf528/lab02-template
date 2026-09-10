@@ -17,27 +17,49 @@ questions if you get stuck. We will walk through these exercises together.
 # Setup
 
 1. Open a VSCode interactive session on the SCC in your
-student folder in the /projectnb/bf528/students/<your-bu-username> directory. 
-Replace the <your-bu-username> with your BU ID and no @bu.edu.
+student folder in the `/projectnb/bf528/students/<your-bu-username>` directory. 
+Replace the `<your-bu-username>` with your BU ID and no @bu.edu.
 
 2. Accept the classroom50 for this lab and clone the repo to 
-your directory.
+your directory. Ensure that this newly clone directory is your working directory
+in VSCode.
 
-3. This lab will be completed in a series of iterations. Each iteration will build
-on the previous one and add new features to make the workflow more robust, 
-reproducible, and easy to use. Please open a terminal and navigate to the 
-iteration_X/ directory for each iteration.
+3. Open a terminal and run the following command:
 
-4. Make sure to activate the conda environment we created in the first lab using
-the following commands:
+```bash
+conda env create -f envs/nextflow_env.yml
+```
+
+You will only have to run this command **once**.
+
+4. Make sure to activate the conda environment we just created using the following command:
 
 ```bash
 conda activate nextflow_latest
 ```
 
-This will become second nature to you as we progress through the semester, but
-you will want to run this series of commands every time you open a new VSCode
-session.
+You will need to **re-run** this command with every new VSCode session as well as 
+whenever you open new terminals in the same VSCode session.
+
+5. Before you do the next part, please also run the following commands on any terminal:
+
+```bash
+echo 'export NXF_SYNTAX_PARSER=v2' >> ~/.bashrc
+
+source ~/.bashrc
+
+```
+
+You should only have to run this **once**.
+
+6. This lab will be completed in a series of iterations. Each iteration will build
+on the previous one and add new features to make the workflow more robust, 
+reproducible, and easy to use. Please navigate to the iteration_X/ directory for 
+each iteration using `cd`. If you are comfortable in a terminal, be aware of your
+working directory. If you are still getting used to things, you can also use
+the VSCode (File -> Open Folder...) for each iteration, making sure you do this
+separately for each one. 
+
 
 # Background
 
