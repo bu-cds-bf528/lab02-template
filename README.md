@@ -93,7 +93,7 @@ python calc_length.py
 
 **Lecture (10 minutes)**
 
-[Basic SCC Usage]({{ site.baseurl }}/lectures/week-02/)
+[Basic SCC Usage](https://bu-bioinfo.github.io/bf528/lectures/week-02/)
 
 **Your Turn**
 
