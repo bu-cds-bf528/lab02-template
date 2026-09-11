@@ -21,7 +21,7 @@ student folder in the `/projectnb/bf528/students/<your-bu-username>` directory.
 Replace the `<your-bu-username>` with your BU ID and no @bu.edu.
 
 2. Accept the classroom50 for this lab and clone the repo to 
-your directory. Ensure that this newly clone directory is your working directory
+your directory. Ensure that this newly cloned directory is your working directory
 in VSCode.
 
 3. Open a terminal and run the following command:
@@ -179,13 +179,13 @@ any other variable, e.g. `GC_CONTENT(dl_genome)`. This replaces the older
 
 - The gc_content.py script is located in the bin/ directory - nextflow 
 automatically makes any scripts in the bin/ directory available to any process. 
-This means that we do not need to pass the script into the process and can 
+This means that we do not need to directly pass the script into the process and can 
 call it by name in the process as long as we make it executable.
 
 **In the envs/ directory:**
 
 - The biopython_env.yml file is located in the envs/ directory. This should
-look exactly like the file used to create your nextflow conda environment. 
+have the same structure as the file used to create your nextflow conda environment. 
 
 - Keep in mind that we do not need to do anything with this file ourselves. Nextflow
 will automatically build this environment and activate it for us provided we use
@@ -245,7 +245,7 @@ Notice that when it finished, nextflow created a new directory called `work` and
 stored the output there. As nextflow is running, you will see the name of the process
 and a series of letters or numbers indicating the hash of the process. 
 
-![nextflow run information]({{ site.baseurl }}/assets/images/nextflow_run.png)
+![nextflow run information](assets/images/nextflow_run.png)
 
 If you now navigate into your `work/` directory, you will see two directories with
 the first two characters of the hash and a subdirectory with the remaining characters of the hash. 
@@ -313,9 +313,9 @@ reusable.
 
 ## Argparse Resources
 
-[Argparse Guide]({{ site.baseurl }}/guides/argument_parsing/)
+[Argparse Guide](https://bu-bioinfo.github.io/bf528/guides/argument_parsing/)
 
-[Argparse Documentation]
+[Argparse Documentation](https://docs.python.org/3/library/argparse.html)
 
 **Your Turn:**
 
@@ -331,7 +331,8 @@ itself and it should become clear how we use argparse in python scripts.
 
 2. Make the script executable using `chmod +x bin/gc_content.py`
 
-Once finished, the script should be runnable via the following command:
+Once finished, the script should be runnable via the following command, you do
+not need to run this directly, it will be run via nextflow:
 
 ```bash
 gc_content.py -i <fasta_file> -o <length_file>
@@ -357,7 +358,7 @@ by the name you gave it, e.g. `$genome`.
 your new process, e.g. `dl_genome = DOWNLOAD()` followed by
 `gc_content = GC_CONTENT(dl_genome)`.
 
-5. Run the nextflow script using `nextflow run main.nf -profile conda,cluster`
+5. Run the nextflow script using `nextflow run main.nf -profile conda,local`
 
 - [ ] Adjust the python script to use argparse
 - [ ] Make the script executable
@@ -423,7 +424,7 @@ published files copied here without the hashed subdirectories in `work`
 7. Once finished, run the nextflow script using the following command:
 
 ```bash
-nextflow run main.nf -profile conda,cluster
+nextflow run main.nf -profile conda,local
 ```
 
 - [ ] Learn how naming outputs lets us access them individually with dot notation
